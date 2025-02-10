@@ -164,14 +164,6 @@ class _PortfolioHomeState extends State<PortfolioHome> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text(
-                        'projects / stuff i work(ed) on',
-                        style: TextStyle(
-                          fontSize: 30,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const SizedBox(width: 24),
                       ElevatedButton.icon(
                         onPressed: () {
                           Navigator.push(
@@ -185,6 +177,14 @@ class _PortfolioHomeState extends State<PortfolioHome> {
                         style: ElevatedButton.styleFrom(
                           padding: const EdgeInsets.symmetric(
                               horizontal: 24, vertical: 12),
+                        ),
+                      ),
+                      const SizedBox(width: 24),
+                      const Text(
+                        'projects / stuff i work(ed) on',
+                        style: TextStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ],
