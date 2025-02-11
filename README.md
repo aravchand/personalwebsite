@@ -1,16 +1,7 @@
-# portfolio_site
+# Portfolio Site
 
-A new Flutter project.
+Online presence! two purposes: 
+1. Showcase of stuff I do / have done
+2. Serves as a self-diary to remember the various explorations, because lowkey I forget all the different excursions LOL
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Open it at [aravchand.com](url), my custom domain!! That's really cool amirite
