@@ -41,6 +41,12 @@ class QuotePost extends YapContent {
 
 // Combined list of all yap content
 final List<YapContent> yapContent = [
+  BlogPost(
+    title: 'if this here, directory load incomplete',
+    date: 'january 15, 2024',
+    preview: 'a step-by-step guide to creating your developer portfolio...',
+    content: 'full article content goes here...',
+  ),
   QuotePost(
     date: 'january 20, 2024',
     quote: 'closed mouths don\'t get fed',
@@ -57,12 +63,6 @@ final List<YapContent> yapContent = [
     title: 'getting started with flutter web',
     date: 'january 1, 2024',
     preview: 'learn how to build your first flutter web application...',
-    content: 'full article content goes here...',
-  ),
-  BlogPost(
-    title: 'building a portfolio website',
-    date: 'january 30, 2024',
-    preview: 'a step-by-step guide to creating your developer portfolio...',
     content: 'full article content goes here...',
   ),
 ];
