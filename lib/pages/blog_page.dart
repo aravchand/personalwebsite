@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'blog_post_page.dart';
 import 'quote_detail_page.dart';
+import '../services/content_service.dart';
 
 // Base class for all yap content
 abstract class YapContent {
@@ -60,15 +61,28 @@ final List<YapContent> yapContent = [
   ),
   BlogPost(
     title: 'building a portfolio website',
-    date: 'january 15, 2024',
+    date: 'january 30, 2024',
     preview: 'a step-by-step guide to creating your developer portfolio...',
     content: 'full article content goes here...',
   ),
 ];
 
 // Update the BlogPage widget to handle both types
-class BlogPage extends StatelessWidget {
+class BlogPage extends StatefulWidget {
   const BlogPage({super.key});
+
+  @override
+  State<BlogPage> createState() => _BlogPageState();
+}
+
+class _BlogPageState extends State<BlogPage> {
+  late Future<List<YapContent>> _contentFuture;
+
+  @override
+  void initState() {
+    super.initState();
+    _contentFuture = ContentService.loadContent();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -80,25 +94,36 @@ class BlogPage extends StatelessWidget {
           onPressed: () => Navigator.pop(context),
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: ListView.builder(
-          itemCount: yapContent.length,
-          itemBuilder: (context, index) {
-            final content = yapContent[index];
-            if (content is QuotePost) {
-              return _buildQuoteCard(content, context);
-            } else if (content is BlogPost) {
-              return _buildBlogCard(content as BlogPost, context);
-            }
-            return const SizedBox.shrink();
-          },
-        ),
+      body: FutureBuilder<List<YapContent>>(
+        future: _contentFuture,
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Center(child: CircularProgressIndicator());
+          }
+
+          if (snapshot.hasError) {
+            return Center(child: Text('Error: ${snapshot.error}'));
+          }
+
+          final content = snapshot.data!;
+          return ListView.builder(
+            itemCount: content.length,
+            itemBuilder: (context, index) {
+              final item = content[index];
+              if (item is QuotePost) {
+                return _buildQuoteCard(item);
+              } else if (item is BlogPost) {
+                return _buildBlogCard(item as BlogPost, context);
+              }
+              return const SizedBox.shrink();
+            },
+          );
+        },
       ),
     );
   }
 
-  Widget _buildQuoteCard(QuotePost quote, BuildContext context) {
+  Widget _buildQuoteCard(QuotePost quote) {
     return Card(
       margin: const EdgeInsets.only(bottom: 16.0),
       child: InkWell(
