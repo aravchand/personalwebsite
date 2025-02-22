@@ -3,7 +3,7 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 
-const RESOURCES = {"flutter_bootstrap.js": "1e0b42c9a6a0c18e26c9c6f7fd11cd34",
+const RESOURCES = {"flutter_bootstrap.js": "15a555330450dd5fbffcb55d5b282a68",
 "version.json": "3d580c8884ce2e572a5ba7fd382bd4a3",
 "index.html": "ea8dee65cfe356b66b58d23b8c299cbf",
 "/": "ea8dee65cfe356b66b58d23b8c299cbf",
@@ -16,6 +16,9 @@ const RESOURCES = {"flutter_bootstrap.js": "1e0b42c9a6a0c18e26c9c6f7fd11cd34",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "manifest.json": "003269ac4e3cf7f7f1c9149748b4aef9",
 "assets/AssetManifest.json": "46570580300cbe7574878a014373e384",
+"assets/content/blogs/flutter_web.md": "36471d834c5fc2c9e7fb9bcc96c995a1",
+"assets/content/quotes/closed_mouths.md": "fb3521a74062c3eaa85c08bd6b230fff",
+"assets/content/quotes/consistency.md": "302443da386216108b89402b6d538339",
 "assets/NOTICES": "11dc2bb22f14a9e86e23053b126b770b",
 "assets/FontManifest.json": "dc3d03800ccca4601324923c0b1d6d57",
 "assets/AssetManifest.bin.json": "ced0a7119967f40c45af0ed40f6215a2",
