@@ -35,7 +35,7 @@ class ContentService {
       // Load quotes
       for (var path in quotePaths) {
         try {
-          final String fileContent = await rootBundle.loadString(path);
+          final String fileContent = await rootBundle.loadString(path.substring(7));
           final parsedContent = parseMarkdownContent(fileContent);
 
           if (parsedContent['type'] == 'quote') {
@@ -54,7 +54,7 @@ class ContentService {
       // Load blogs
       for (var path in blogPaths) {
         try {
-          final String fileContent = await rootBundle.loadString(path);
+          final String fileContent = await rootBundle.loadString(path.substring(7));
           final parsedContent = parseMarkdownContent(fileContent);
 
           if (parsedContent['type'] == 'blog') {
